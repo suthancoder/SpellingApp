@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_20_114425) do
+ActiveRecord::Schema.define(version: 2018_09_25_214527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2018_09_20_114425) do
     t.string "words_list", default: [], array: true
     t.integer "length"
     t.integer "score"
+    t.string "title"
+    t.string "description"
     t.index ["user_id"], name: "index_tests_on_user_id"
   end
 

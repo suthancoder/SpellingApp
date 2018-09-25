@@ -8,6 +8,13 @@ class TestsController < ApplicationController
     @test = Test.find(params[:id])
   end
 
+  def new
+  end
+
+  def create
+  end
+  
+
 
   def take_test
     @test = Test.new
