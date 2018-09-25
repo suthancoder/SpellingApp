@@ -1,0 +1,20 @@
+<p>Take tests page</p>
+<%= link_to tests_path do%>
+  <button class="btn btn-primary"> To All Tests </button>
+<% end %>
+<br>
+<br>
+<br>
+
+<% @test.words_list.each do |i| %>
+
+  <%= i %>
+  <br>
+<% end %>
+
+<br>
+
+<%= link_to say_word_tests_path(@word, :sample => "test word") do %>
+<button class-"btn btn-primary"> Say word </button>
+<% end %>
+
