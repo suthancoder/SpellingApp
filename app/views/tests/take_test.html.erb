@@ -14,7 +14,18 @@
 
 <br>
 
-<%= link_to say_word_tests_path(@word, :sample => "test word") do %>
+<% testvar = "frozen yoghurt" %>
+
+<%= link_to say_word_tests_path(@word, :sample => testvar) do %>
 <button class-"btn btn-primary"> Say word </button>
 <% end %>
 
+
+<button id="myBtn">Play</button>
+<script>
+  document.getElementById("myBtn").addEventListener("click", play);
+  function play() {
+    var msg = new SpeechSynthesisUtterance("<%= testvar %>");
+    window.speechSynthesis.speak(msg)
+  }
+</script>

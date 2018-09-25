@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="top">
+    <h1>Test dated </h1><%= @test.created_at %>
+  </div>
+
+
+  <div class="bottom">
+    <h2>TABLE OF WORDS</h2>
+
+      <% @test.words_list.each do |i| %>
+        <div class="col-xs-6">
+          <div class="col-xs-12">
+            <div class="word">
+              <%= i %>
+            </div>
+          </div>
+        </div>
+
+      <% end %>
+      <% @test.words_list.each do |i| %>
+        <div class="col-xs-6">
+          <div class="col-xs-12">
+            <div class="word">
+              <%= i %>
+            </div>
+          </div>
+        </div>
+
+      <% end %>
+
+  </div>
+
+
+</div>
