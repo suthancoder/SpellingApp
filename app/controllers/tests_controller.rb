@@ -20,11 +20,28 @@ class TestsController < ApplicationController
   end
 
   def new
+    @test = Test.new
   end
 
   def create
+    @test = Test.new
+    @test.title = params[:title]
+    # @test.words_list = params[:words_list].split(",")
+    @test.save
+    redirect_to tests_path
   end
 
+
+  def edit
+    @test = Test.find(params[:id])
+  end
+
+  def update
+  end
+
+
+  def destroy
+  end
 
 
   def take_test
@@ -46,6 +63,10 @@ class TestsController < ApplicationController
 
 
   private
+  def test_params
+    params.require(:test).permit(:title, :words_list)
+  end
+
 
 
 end
