@@ -1,10 +1,21 @@
 class TestsController < ApplicationController
 
+  def home
+  end
+
+
   def index
-    @tests = Test.all
+    if params[:bottom_test].blank?
+     @tests = Test.all
+
+    else
+      @tests = Test.all
+    end
+
   end
 
   def show
+
     @test = Test.find(params[:id])
   end
 
@@ -13,7 +24,7 @@ class TestsController < ApplicationController
 
   def create
   end
-  
+
 
 
   def take_test

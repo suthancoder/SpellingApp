@@ -1,15 +1,26 @@
 <p>TEST INDEX</p>
 
+
+
+
+
 <%= link_to "Take Test", take_test_tests_path %>
 <% @tests.each do |i| %>
 
   <div class="testcard">
-    <%= i.words_list %>
+
+   <li> <%= i.id %> </li>
 
 
   </div>
 
 
 
+<% end %>
+
+<br>
+
+<%= link_to tests_path do%>
+  <button class="btn btn-primary"> To All Tests </button>
 <% end %>
 
