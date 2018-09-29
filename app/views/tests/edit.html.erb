@@ -1,4 +1,4 @@
-<!-- <form action="/tests/1" method="post">
+<!-- <form action="/tests/1" method="patch">
 
   <label for="title">Test title</label>
   <input type="text" name="test[title]" value="title">
@@ -11,13 +11,6 @@
 </form> -->
 
 
-<% @test = Test.new %>
 
-<%= form_for @test do |t| %>
-  <%= t.label :title, "Enter test title" %>
-  <%= t.text_field :title %>
-  <%= t.label :words_list, "Enter list of words" %>
-  <%= t.text_field :words_list %>
-  <%= t.submit %>
 
-<% end %>
+<%= render "form" %>

@@ -1,0 +1,11 @@
+<%= form_for @test do |t| %>
+  <%= t.label :title, "Enter test title" %>
+  <%= t.text_field :title %>
+  <%= t.label :words_list, "Enter list of words" %>
+  <%= t.text_field :words_list %>
+  <%= t.label :user_id, "Enter user id" %>
+  <%= t.text_field :user_id %>
+  <%= t.submit %>
+
+
+<% end %>

@@ -1,5 +1,7 @@
 class TestsController < ApplicationController
 
+  before_action :set_restaurant, only: [:show, :update, :destroy, :edit]
+
   def home
   end
 
@@ -16,7 +18,6 @@ class TestsController < ApplicationController
 
   def show
 
-    @test = Test.find(params[:id])
   end
 
   def new
@@ -24,23 +25,23 @@ class TestsController < ApplicationController
   end
 
   def create
-    @test = Test.new
-    @test.title = params[:title]
-    # @test.words_list = params[:words_list].split(",")
-    @test.save
+    Test.create(test_params)
     redirect_to tests_path
   end
 
 
   def edit
-    @test = Test.find(params[:id])
   end
 
   def update
+    @test.update(test_params)
+    redirect_to test_path(@test)
   end
 
 
   def destroy
+    @test.destroy
+    redirect_to tests_path
   end
 
 
@@ -64,9 +65,12 @@ class TestsController < ApplicationController
 
   private
   def test_params
-    params.require(:test).permit(:title, :words_list)
+    params.require(:test).permit(:title, :words_list, :user_id)
   end
 
+  def set_restaurant
+    @test = Test.find(params[:id])
+  end
 
 
 end
